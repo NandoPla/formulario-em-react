@@ -7,32 +7,29 @@ function App() {
 
   const [escolha, setEscolha] = useState();
 
-  const voceEscolheu = "A Caixa escolhida foi"
-
   const handleChange = (event) => { // é a função que muda de acordo com o que digita, é o evento que pega tudo o que a pessoa digita
     setDigita(event.target.value) 
 }
-  
   const handleChoice = (event) => {
     setEscolha(event.target.checked)
 } 
 
-  return ( //value é o atributo do input
+  return (
     <>
     <form>
       <label for="input">Escreva seu nome: </label>
-        <input type="text" value={digita} onChange={handleChange}/><br></br>
+          <input type="text" value={digita} onChange={handleChange}/><br></br>
 
       <label for="checkbox">Caixa 1</label>
-          <input type="checkbox" value={escolha} onChange={handleChoice}/>
+          <input type="checkbox" value={escolha} onClick={handleChoice}/>
 
       <label for="checkbox">Caixa 2</label>
-          <input type="checkbox" value={escolha} onChange={handleChoice}/>
+          <input type="checkbox" value={escolha} onClick={handleChoice}/>
 
       <label for="checkbox">Caixa 3</label>
-          <input type="checkbox" value={escolha} onChange={handleChoice}/>
+          <input type="checkbox" value={escolha} onClick={handleChoice}/>
           
-      <div>{voceEscolheu}{escolha}</div>
+      <div>{escolha}</div>
     </form>
     
   </>
